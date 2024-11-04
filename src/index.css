@@ -81,3 +81,11 @@ li::before {
   margin-right: 5px;   
   display: inline-block; 
 }
+.comment-card{
+  text-align: center;
+  color: #036103;
+  padding: 18px;
+  margin: 20px;
+  border-radius: 30px;
+  border: 10px solid;
+}

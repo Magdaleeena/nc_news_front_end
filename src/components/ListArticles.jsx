@@ -25,7 +25,7 @@ export default function ListArticles(){
     }
 
     if (isLoading) {
-        return <p>Loading articles...</p>;
+        return <p>Loading articles...</p>
     }
 
     return (
