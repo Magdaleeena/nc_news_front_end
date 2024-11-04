@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { getCommentsByArticleId } from '../utils/api';
 import CommentCard from "./CommentCard";
+import { useParams } from "react-router-dom";
 
 
-export default function CommentList({article_id}){
+export default function CommentList(){
+    const { article_id } = useParams()
     const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)

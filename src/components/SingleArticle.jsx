@@ -37,7 +37,6 @@ export default function SingleArticle() {
     return (
         <div id="single-article">
             <h2>Title: {article.title}</h2>
-            <p>ID: {article.article_id}</p>
             <h3>Topic: {article.topic}</h3>
             <h3>Author: {article.author}</h3>
             {article.article_img_url && (
