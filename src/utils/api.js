@@ -21,3 +21,12 @@ export function getArticleById(article_id){
         return err;
     })
 }
+
+export function getCommentsByArticleId(article_id){
+    return api.get(`/articles/${article_id}/comments`).then(({data}) => {
+        return data.comments
+    })
+    .catch((err)=>{
+        return err;
+    })
+}
