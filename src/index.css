@@ -68,3 +68,16 @@ img {
   margin-top: 15px;
   text-align: center;
 }
+
+.single-article{
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+}
+
+li::before {
+  margin-right: 5px;   
+  display: inline-block; 
+}

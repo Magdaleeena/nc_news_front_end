@@ -12,3 +12,12 @@ export function getArticles(){
         return err;
     })
 }
+
+export function getArticleById(article_id){
+    return api.get(`/articles/${article_id}`).then(({data}) => {
+        return data.article
+    })
+    .catch((err)=>{
+        return err;
+    })
+}
