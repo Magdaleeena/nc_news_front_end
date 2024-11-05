@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getCommentsByArticleId } from '../utils/api';
 import CommentCard from "./CommentCard";
 import { useParams } from "react-router-dom";
+import DeleteComment from "./DeleteComment";
 
 
 export default function CommentList(){
@@ -33,11 +34,12 @@ export default function CommentList(){
 
     return (
         <div className="comments-list">
+            
             <h2>All comments:</h2>
             <ul>
                 {comments.length > 0 ? (
                     comments.map((comment) => (
-                        <CommentCard comment={comment} key={comment.comment_id} />
+                        <CommentCard comment={comment} key={comment.comment_id} setComments={setComments} comments={comments}/>
                     ))
                 ) : (
                     <p>No comments available.</p>
