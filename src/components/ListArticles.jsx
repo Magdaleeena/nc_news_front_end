@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getArticles } from '../utils/api';
 import ArticleCard from "./ArticleCard";
+import Expander from "./Expander";
 
 export default function ListArticles(){
     const [articles, setArticles] = useState([])
@@ -29,14 +30,14 @@ export default function ListArticles(){
     }
 
     return (
-        <>
+        <Expander>
         <h2>All articles:</h2>
         <ul>
             {articles.map((article) => {
                 return<ArticleCard article={article} key={article.article_id}/>
             })}
         </ul>
-        </>
+        </Expander>
     )
 
 }
