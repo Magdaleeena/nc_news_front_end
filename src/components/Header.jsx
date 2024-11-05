@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import UserPanel from "./UserPanel";
 
 export default function Header(){
 
@@ -8,6 +9,7 @@ export default function Header(){
         <nav className="links">
             <Link to="/">Home</Link>
             <Link to="/articles">Articles</Link>
+            <UserPanel/>
 
         </nav>
     </header>
