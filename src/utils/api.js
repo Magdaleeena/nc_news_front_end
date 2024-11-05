@@ -34,3 +34,7 @@ export function postComment(article_id, newComment){
         return data.comment
     })
 }
+
+export function deleteComment(comment_id){
+    return api.delete(`/comments/${comment_id}`)
+}
