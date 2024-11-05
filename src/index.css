@@ -125,3 +125,12 @@ button {
   font-size: 1rem;
   margin-left: 5px;
 }
+
+.new-comment{
+  text-align: center;
+  color: #036103;
+  padding: 18px;
+  margin: 20px;
+  border-radius: 30px;
+  border: 10px solid;
+}
