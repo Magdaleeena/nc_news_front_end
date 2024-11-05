@@ -17,10 +17,10 @@ export default function UserPanel(){
         <div className="user-panel">
             <div className="greeting">
                 Hello { user && user.name ? user.name : 'guest'}
-            </div>
-            { user ? (<button className="login-button" onClick={logout}>Logout</button>) : (
-            <button className="login-button" onClick={login}>Login</button>
-      )}
+                { user ? (<button className="login-button" onClick={logout}>Logout</button>) : (
+                <button className="login-button" onClick={login}>Login</button>
+                )}
+            </div>            
         </div>
     )
 }

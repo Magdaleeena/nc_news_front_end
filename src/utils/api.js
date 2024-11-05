@@ -28,3 +28,9 @@ export function updateArticleVotes(article_id, voteChange){
         return data.article
     })
 }
+
+export function postComment(article_id, newComment){
+    return api.post(`/articles/${article_id}/comments`, newComment).then(({data}) => {
+        return data.comment
+    })
+}

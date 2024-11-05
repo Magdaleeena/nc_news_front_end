@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getArticleById } from "../utils/api";
+import { getArticleById, getCommentsByArticleId } from "../utils/api";
 import Error from './Error';
 import CommentList from "./CommentList";
 import VoteOnArticle from "./VoteOnArticle";
+import NewComment from "./NewComment";
 
 export default function SingleArticle() {
     const { article_id } = useParams()
     const [article, setArticle] = useState(null)
+    const [comments, setComments] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState(null)
 
@@ -16,6 +18,10 @@ export default function SingleArticle() {
         getArticleById(article_id)
             .then((articleData) => {
                 setArticle(articleData)
+                return getCommentsByArticleId(article_id)
+            })
+            .then((commentsData) => {
+                setComments(commentsData)
                 setIsLoading(false)
             })
             .catch((err) => {
@@ -48,7 +54,8 @@ export default function SingleArticle() {
             
             <h4>Comment count: {article.comment_count}</h4>
             <VoteOnArticle article={article} setArticle={setArticle}/>
-            <CommentList article_id={article_id}/>
+            <NewComment article_id={article_id} setComments={setComments} currentComments={comments}/>
+            <CommentList article_id={article_id} comments={comments}/>
         </div>
     )
 }
