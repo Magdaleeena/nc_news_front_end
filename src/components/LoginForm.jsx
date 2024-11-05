@@ -1,17 +1,17 @@
-import { UserContext } from "../context/UserContext";
-import { useContext } from "react";
+// import { UserContext } from "../context/UserContext";
+// import { useContext } from "react";
 
-export default function LoginForm(){
-    const [user, setUser] = useContext(UserContext)
+// export de function LoginForm(){
+//     const [user, setUser] = useContext(UserContext)
 
-    function login(e){
-        e.preventDefault()
-        setUser({ name: 'jonny'})
-    }
+//     function login(e){
+//         e.preventDefault()
+//         setUser({ name: 'jonny'})
+//     }
 
-    return (
-        <form onSubmit={login}>
-            <button className="login-button">Login</button>
-        </form>
-    )
-}
+//     return (
+//         <form onSubmit={login}>
+//             <button className="login-button">Login</button>
+//         </form>
+//     )
+// }
