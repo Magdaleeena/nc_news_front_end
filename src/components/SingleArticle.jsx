@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getArticleById } from "../utils/api";
 import Error from './Error';
 import CommentList from "./CommentList";
+import VoteOnArticle from "./VoteOnArticle";
 
 export default function SingleArticle() {
     const { article_id } = useParams()
@@ -44,8 +45,9 @@ export default function SingleArticle() {
             )}
             <p>{article.body}</p>
             <h4>Created: {new Date(article.created_at).toLocaleString()}</h4>
-            <h4>Votes: {article.votes}</h4>
+            
             <h4>Comment count: {article.comment_count}</h4>
+            <VoteOnArticle article={article} setArticle={setArticle}/>
             <CommentList article_id={article_id}/>
         </div>
     )
