@@ -9,9 +9,8 @@ export default function Header(){
         <nav className="links">
             <Link to="/">Home</Link>
             <Link to="/articles">Articles</Link>
-            <UserPanel/>
-            
-
+            <Link to="/topics">Topics</Link>
+            <UserPanel/>          
         </nav>
     </header>
     )
