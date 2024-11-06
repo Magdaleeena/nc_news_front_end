@@ -5,6 +5,7 @@ import Error from './Error';
 import CommentList from "./CommentList";
 import VoteOnArticle from "./VoteOnArticle";
 import NewComment from "./NewComment";
+import Loader from "./Loader";
 
 export default function SingleArticle() {
     const { article_id } = useParams()
@@ -28,10 +29,15 @@ export default function SingleArticle() {
                 setError(err)
                 setIsLoading(false)
             });
-    }, [article_id]);
-
+    }, [article_id])
+    
     if (isLoading) {
-        return <p>Loading article...</p>
+        return (
+            <div>
+                <Loader/>
+                <p>Loading article...</p>
+            </div>
+        )
     }
 
     if (error) {
@@ -50,8 +56,7 @@ export default function SingleArticle() {
                 <img src={article.article_img_url} alt={article.title} />
             )}
             <p>{article.body}</p>
-            <h4>Created: {new Date(article.created_at).toLocaleString()}</h4>
-            
+            <h4>Created: {new Date(article.created_at).toLocaleString()}</h4>            
             <h4>Comment count: {article.comment_count}</h4>
             <VoteOnArticle article={article} setArticle={setArticle}/>
             <NewComment article_id={article_id} setComments={setComments} currentComments={comments}/>

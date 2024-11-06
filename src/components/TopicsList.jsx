@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { getTopics } from "../utils/api";
 import TopicCard from "./TopicCard";
 import Expander from "./Expander";
+import Loader from "./Loader";
 
 export default function TopicsList(){
     const [topics, setTopics] = useState([])
@@ -25,7 +26,12 @@ export default function TopicsList(){
     }
 
     if (isLoading) {
-        return <p>Loading topics...</p>
+        return (
+            <div>
+                <Loader/>
+                <p>Loading topics...</p>
+            </div>
+        )
     }
 
     return (

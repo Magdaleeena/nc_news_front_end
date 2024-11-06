@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { deleteComment } from '../utils/api';
 
-export default function DeleteComment({ comment_id, setComments, comments }){
+export default function DeleteComment({ comment_id, setComments }){
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
@@ -12,7 +12,7 @@ export default function DeleteComment({ comment_id, setComments, comments }){
         setIsLoading(true)
         deleteComment(comment_id)
         .then(() => {
-            setComments(comments.filter(comment => comment.comment_id !== comment_id))
+            setComments((currentComments) => currentComments.filter(comment => comment.comment_id !== comment_id))
             setIsSuccess(true)
             setIsLoading(false)
         })
