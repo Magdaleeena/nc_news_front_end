@@ -4,10 +4,9 @@ import Header from './components/Header'
 import Home from './components/Home'
 import ListArticles from './components/ListArticles'
 import SingleArticle from './components/SingleArticle'
-
 import { UserProvider } from './context/UserContext'
-
 import CommentList from './components/CommentList'
+import TopicsList from './components/TopicsList'
 
 
 
@@ -21,7 +20,7 @@ function App() {
         <Route path="/articles" element={<ListArticles/>}/>
         <Route path="/articles/:article_id" element={<SingleArticle/>}/>
         <Route path="/articles/:article_id/comments" element={<CommentList/>}/>
-
+        <Route path="/topics" element={<TopicsList/>} />
       </Routes>     
     </UserProvider>
   )
@@ -29,5 +28,5 @@ function App() {
 
 export default App
 
-//<Route path="/articles/:article_id/comments" element={<CommentList/>}/>
 //<Route path="/login" element={<LoginForm/>}/>
+

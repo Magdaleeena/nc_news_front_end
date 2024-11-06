@@ -4,8 +4,10 @@ const api = axios.create({
     baseURL: 'https://magdaleenas-nc-news.onrender.com/api/'
 })
 
-export function getArticles(){
-    return api.get(`/articles`).then(({data}) => {
+export function getArticles(topic){
+    let path = `/articles?`
+    if (topic) path +=`&topic=${topic}`
+    return api.get(path).then(({data}) => {
         return data.articles
     })
 }
@@ -38,3 +40,10 @@ export function postComment(article_id, newComment){
 export function deleteComment(comment_id){
     return api.delete(`/comments/${comment_id}`)
 }
+
+export function getTopics(){
+    return api.get(`/topics`).then(({data}) => {
+        return data.topics
+    })
+}
+
