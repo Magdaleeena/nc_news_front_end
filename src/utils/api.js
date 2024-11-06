@@ -4,9 +4,11 @@ const api = axios.create({
     baseURL: 'https://magdaleenas-nc-news.onrender.com/api/'
 })
 
-export function getArticles(topic){
+export function getArticles(topic, sort_by, order){
     let path = `/articles?`
     if (topic) path +=`&topic=${topic}`
+    if (sort_by) path +=`&sort_by=${sort_by}`
+    if (order) path +=`&order=${order}`
     return api.get(path).then(({data}) => {
         return data.articles
     })
