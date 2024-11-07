@@ -28,8 +28,15 @@ export default function NewComment({article_id, setComments, currentComments}){
             setIsSuccess(true)
         })          
         .catch((err) => {
-            setError('Failed to post a comment. Please try again later')
-            setIsSubmitting(false)
+            if(err.response && err.response.status === 404){
+                setError('This username is not registered in our database! Please register to post a comment.')
+                setIsSubmitting(false)
+            }
+            else{
+                setError('Failed to post a comment. Please try again later')
+                setIsSubmitting(false)
+            }
+            
         })
     }
 

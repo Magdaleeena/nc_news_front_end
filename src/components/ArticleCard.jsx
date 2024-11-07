@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import FancyBox from "./FancyBox";
 
-export default function ArticleCard({ article, topic }) {
+export default function ArticleCard({ article }) {
     return (
         <FancyBox>
             <div className="article-card">

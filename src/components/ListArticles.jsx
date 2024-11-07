@@ -4,11 +4,12 @@ import ArticleCard from "./ArticleCard";
 import Expander from "./Expander";
 import { useSearchParams } from "react-router-dom";
 import Loader from "./Loader";
+import Error from "./Error";
 
 export default function ListArticles(){
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const [isError, setIsError] = useState(false)
+    const [error, setError] = useState(null)
     const [sortBy, setSortBy] = useState('')
     const [orderBy, setOrderBy] = useState('')
     
@@ -30,15 +31,11 @@ export default function ListArticles(){
             setArticles(articlesData)
             setIsLoading(false)
         })
-        .catch((err) => {
-            setIsError(true)
+        .catch((error) => {
+            setError(true)
             setIsLoading(false)
         })
     }, [topic, sortBy, orderBy])
-
-    if(isError) {
-        return <p>Oh no! An error!</p>
-    }
 
     if (isLoading) {
         return (
@@ -50,7 +47,7 @@ export default function ListArticles(){
     }
 
     return (
-        <Expander>
+        <Expander>{error && <Error error={error}/>}
         <h2> {topic ? `Articles on "${topic}"` : 'All Articles'}</h2>
         <div>
             <select className="sorting"

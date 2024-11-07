@@ -25,16 +25,13 @@ export default function CommentList(){
         })
     }, [article_id])
 
-    if (error) {
-        return <Error error={error}/>
-    }
-
     if (isLoading) {
         return <p>Loading comments...</p>
     }
 
     return (
-        <Expander className="comments-list">            
+        <Expander className="comments-list">
+            {error && <Error error={error}/>}            
             <h2>All comments:</h2>
             <ul>
                 {comments.length > 0 ? (
