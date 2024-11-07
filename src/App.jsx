@@ -7,6 +7,7 @@ import SingleArticle from './components/SingleArticle'
 import { UserProvider } from './context/UserContext'
 import CommentList from './components/CommentList'
 import TopicsList from './components/TopicsList'
+import ErrorPage from './components/ErrorPage'
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/articles/:article_id" element={<SingleArticle/>}/>
         <Route path="/articles/:article_id/comments" element={<CommentList/>}/>
         <Route path="/topics" element={<TopicsList/>} />
+        <Route path="*" element={<ErrorPage/>}/>        
       </Routes>     
     </UserProvider>
   )

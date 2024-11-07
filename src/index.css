@@ -158,5 +158,9 @@ button {
   border: 3px solid;
 }
 
+.error {
+  color: red;
+}
+
 
 

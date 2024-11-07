@@ -20,11 +20,7 @@ export default function TopicsList(){
             setIsLoading(false)
         })
     }, [])
-
-    if (error) {
-        return <Error error={error}/>
-    }
-
+  
     if (isLoading) {
         return (
             <div>
@@ -36,6 +32,7 @@ export default function TopicsList(){
 
     return (
         <Expander className="topics-list">
+            {error && <Error error={error}/>}
             <h2>All topics:</h2>
             <ul>
                 {topics.map((topic) => {

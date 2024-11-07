@@ -28,7 +28,7 @@ export default function SingleArticle() {
             .catch((err) => {
                 setError(err)
                 setIsLoading(false)
-            });
+            })
     }, [article_id])
     
     if (isLoading) {
@@ -40,15 +40,12 @@ export default function SingleArticle() {
         )
     }
 
-    if (error) {
-        return <Error error={error}/>
+    if(!article) {
+        return <p>Article does not exist!</p>
     }
 
-    if(!article) {
-        return <p>No article found.</p>
-    }
     return (
-        <div id="single-article">
+        <div id="single-article">{error && <Error error={error}/>}
             <h2>Title: {article.title}</h2>
             <h3>Topic: {article.topic}</h3>
             <h3>Author: {article.author}</h3>
