@@ -16,7 +16,7 @@ The NC news is a social news aggregation, web content rating and discussion webs
 1. Click on 'Code' and copy the HTTPS link.
 2. Select a folder in your local machine and run the command: git clone [paste HTTPS link here, remove brackets].
 
-#### To install & run the project locally run these commands in your terminal:
+#### To install & run the project locally, execute the following commands in your terminal:
 1. npm i - to install all necessary dependencies.
 2. npm run dev - to launch the script.
 
