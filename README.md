@@ -2,7 +2,7 @@
 
 ## Project summary:
 
-This is a front-end React App which connects to the back-end API & database - visit [here](https://github.com/Magdaleeena/nc_news)
+This is a front-end React App which connects to the back-end API & database, please visit [here](https://github.com/Magdaleeena/nc_news)
 
 To visit the deployed version, please click [here](https://resplendent-pika-7c909c.netlify.app/)
 
