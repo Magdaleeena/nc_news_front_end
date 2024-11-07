@@ -2,7 +2,7 @@
 
 ## Project summary:
 
-This is a front-end React App which connects to the back-end API & database (visit here [here] (https://github.com/Magdaleeena/nc_news))
+This is a front-end React App which connects to the back-end API & database - visit [here](https://github.com/Magdaleeena/nc_news)
 
 To visit the deployed version, please click [here](https://resplendent-pika-7c909c.netlify.app/)
 
@@ -16,7 +16,7 @@ The NC news is a social news aggregation, web content rating and discussion webs
 1. Click on 'Code' and copy the HTTPS link.
 2. Select a folder in your local machine and run the command: git clone [paste HTTPS link here, remove brackets].
 
-#### To install & run the project locally:
+#### To install & run the project locally run these commands in your terminal:
 1. npm i - to install all necessary dependencies.
 2. npm run dev - to launch the script.
 
