@@ -52,8 +52,7 @@ export default function SingleArticle() {
                 <img src={article.article_img_url} alt={article.title} />
             )}
             <p>{article.body}</p>
-            <h4>Created: {new Date(article.created_at).toLocaleString()}</h4>            
-            <h4>Comment count: {article.comment_count}</h4>
+            <h4>Published on: {new Date(article.created_at).toLocaleString()}</h4>            
             <VoteOnArticle article={article} setArticle={setArticle}/> 
             <br></br>          
             <CommentList article_id={article_id} comments={comments}/>

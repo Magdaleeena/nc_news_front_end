@@ -4,18 +4,15 @@ import FancyBox from "./FancyBox";
 export default function ArticleCard({ article }) {
     return (
         <FancyBox>
-            <div className="article-card">
-                <li>
-                <Link to={`/articles/${article.article_id}`}>Read more:</Link>
-                <h3>{article.title}</h3>
-                <h3>Topic: <Link to={`/topics`}>{article.topic}</Link></h3>              
-                <h4>Author: {article.author}</h4>
-                <h4>Created: {new Date(article.created_at).toLocaleString()}</h4>
-                <h4>Votes:{article.votes}</h4>
-                <h4>Comment count:{article.comment_count}</h4>
-                <img src={article.article_img_url} alt={`${article.title}`}></img>
+            <section className="article-card">
+                <li>  
+                <img className="img-article-card" src={article.article_img_url} alt={`${article.title}`}></img>              
+                <h3><Link to={`/articles/${article.article_id}`}>{article.title}</Link></h3>
+                <h5>Topic: <Link to={`/topics`}>{article.topic}</Link></h5>      
+                <p>👍 {article.votes}</p>
+                <p>💬 {article.comment_count}</p>
                 </li>                          
-            </div>
+            </section>
         </FancyBox>
         )
 }

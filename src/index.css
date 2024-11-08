@@ -1,6 +1,8 @@
 *{
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(3, 97, 3);
+  text-align: center;
+
 }
 
 #header{
@@ -13,7 +15,7 @@
   border-radius: 50px;
   border: 10px solid;
   letter-spacing: 2px;
- 
+  flex: content;
 }
 
 .links{
@@ -30,13 +32,27 @@ body{
 }
 
 img {
-  max-width: 50%;
+  max-width: 45%;
   height: auto;
   object-fit: cover;
+  border: 2px solid;
+  border-radius: 10px;
+  color:rgb(15, 16, 16);
 }
 
 .home-picture {
-  max-width: 100%;
+  max-width: 50%;
+  height: auto;
+  border: 5px solid;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+}
+
+@media (max-width: 480px) {
+  img {
+      width: 100%; 
+  }
 }
 
 .home-page {
@@ -50,8 +66,9 @@ img {
   border-radius: 10px;
   padding: 20px; 
   justify-content: center; 
-  height: 500px;
-  width: 500px;
+  text-align: center;
+  height: 355px;
+  width: 420px;
 }
 
 .fancy:hover {
@@ -59,10 +76,17 @@ img {
   background-color: #036103;
 }
 
+.article-card-container {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 10px;
+  padding: 10px; 
+}
 .article-card {
   justify-content: center;
-  height: 460px;
-  width: 450px;
+  height: 315px;
+  width: 380px;
   background-color: #fff;
   border-radius: 10px;
   text-align: center;
@@ -70,7 +94,19 @@ img {
   padding: 5px;
   margin-top: 15px;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.article-card:hover {
+  filter: drop-shadow(0 0 0.2rem rgb(182, 178, 178));
+}
+
+@media (max-width: 600px) {
+  .article-card-container {
+    grid-template-columns: 1fr;  
+  }
+}
+
 
 .single-article{
   display: flex;
@@ -91,6 +127,7 @@ li::before {
   padding: 18px;
   margin: 20px;
   border-radius: 30px;
+  background-color: rgb(238, 236, 233);
   border: 10px solid;
 }
 .login-button {
@@ -130,6 +167,10 @@ button {
   margin-left: 5px;
 }
 
+.button-post{
+  margin-top: 20px;
+}
+
 .new-comment{
   text-align: center;
   color: #036103;
@@ -148,15 +189,25 @@ button {
   border: 10px solid;
 }
 
+.sorting-container{
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  gap: 20px;
+}
+
 .sorting{
   border-radius: 30px;
   border: 5px solid;
   font-size: medium;
+  text-align: center;
+  padding: 10px 20px;
 }
 
 .post-comment{
   border-radius: 10px;
   border: 3px solid;
+  text-align: left;
 }
 
 .error {

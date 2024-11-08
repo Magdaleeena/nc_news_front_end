@@ -6,7 +6,7 @@ export default function UserPanel(){
     const [user, setUser] = useContext(UserContext)
 
     const login = () => {
-        setUser({ name: 'jonny' })
+        setUser({ name: 'cooljmessy' })
       }
 
     function logout(){

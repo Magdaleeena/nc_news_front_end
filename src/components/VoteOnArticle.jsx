@@ -59,7 +59,7 @@ export default function VoteOnArticle({article, setArticle, userVoteStatus}){
 
     return (
         <div>
-            <h4>Votes: {article.votes}</h4>
+            <h4>👍  {article.votes}</h4>
             <button disabled={isVoting} onClick={handleVoteUp}>Like</button>
             <button disabled={isVoting} onClick={handleVoteDown}>Unlike</button>
             {voteError && <p className="error">{voteError}</p>}
