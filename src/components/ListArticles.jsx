@@ -49,7 +49,7 @@ export default function ListArticles(){
     return (
         <Expander>{error && <Error error={error}/>}
         <h2> {topic ? `Articles on "${topic}"` : 'All Articles'}</h2>
-        <div>
+        <div className="sorting-container">
             <select className="sorting"
                 name="sortList"
                 id="sortList"
@@ -70,7 +70,7 @@ export default function ListArticles(){
                 <option value="desc">Descending</option>
             </select>
         </div>
-        <ul>
+        <ul className="article-card-container">
             {articles.map((article) => {
                 return<ArticleCard article={article} key={article.article_id}/>
             })}

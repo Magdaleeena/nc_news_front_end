@@ -48,7 +48,8 @@ export default function NewComment({article_id, setComments, currentComments}){
                 <input className="post-comment" type="text" id="username" name="username" value={newComment.username} onChange={handleChange} placeholder='your username' required/>
                 <label htmlFor="body"> Comment: </label>
                 <textarea className="post-comment" id="body" name="body" value={newComment.body} onChange={handleChange} required />
-                <button type="submit">
+                <br></br>
+                <button className="button-post" type="submit">
                     {isSubmitting ? 'posting' : 'post comment'}
                 </button>
                 {isSuccess && <h2>Comment posted!</h2>}

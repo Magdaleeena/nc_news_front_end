@@ -4,7 +4,6 @@ import { getArticleById, getCommentsByArticleId } from "../utils/api";
 import Error from './Error';
 import CommentList from "./CommentList";
 import VoteOnArticle from "./VoteOnArticle";
-import NewComment from "./NewComment";
 import Loader from "./Loader";
 
 export default function SingleArticle() {
@@ -45,7 +44,7 @@ export default function SingleArticle() {
     }
 
     return (
-        <div id="single-article">{error && <Error error={error}/>}
+        <article id="single-article">{error && <Error error={error}/>}
             <h2>Title: {article.title}</h2>
             <h3>Topic: {article.topic}</h3>
             <h3>Author: {article.author}</h3>
@@ -53,11 +52,10 @@ export default function SingleArticle() {
                 <img src={article.article_img_url} alt={article.title} />
             )}
             <p>{article.body}</p>
-            <h4>Created: {new Date(article.created_at).toLocaleString()}</h4>            
-            <h4>Comment count: {article.comment_count}</h4>
-            <VoteOnArticle article={article} setArticle={setArticle}/>
-            <NewComment article_id={article_id} setComments={setComments} currentComments={comments}/>
+            <h4>Published on: {new Date(article.created_at).toLocaleString()}</h4>            
+            <VoteOnArticle article={article} setArticle={setArticle}/> 
+            <br></br>          
             <CommentList article_id={article_id} comments={comments}/>
-        </div>
+        </article>
     )
 }
