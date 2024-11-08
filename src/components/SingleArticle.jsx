@@ -43,10 +43,12 @@ export default function SingleArticle() {
         return <p>Article does not exist!</p>
     }
 
+    const capitalizedTopic = article.topic.charAt(0).toUpperCase() + article.topic.slice(1)
+
     return (
         <article id="single-article">{error && <Error error={error}/>}
             <h2>Title: {article.title}</h2>
-            <h3>Topic: {article.topic}</h3>
+            <h3>Topic: {capitalizedTopic}</h3>
             <h3>Author: {article.author}</h3>
             {article.article_img_url && (
                 <img src={article.article_img_url} alt={article.title} />
