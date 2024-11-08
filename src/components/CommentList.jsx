@@ -4,6 +4,7 @@ import CommentCard from "./CommentCard";
 import { useParams } from "react-router-dom";
 import Error from "./Error";
 import Expander from "./Expander";
+import NewComment from "./NewComment";
 
 
 export default function CommentList(){
@@ -33,6 +34,7 @@ export default function CommentList(){
         <Expander className="comments-list">
             {error && <Error error={error}/>}            
             <h2>All comments:</h2>
+            <NewComment article_id={article_id} setComments={setComments} currentComments={comments}/>
             <ul>
                 {comments.length > 0 ? (
                     comments.map((comment) => (
