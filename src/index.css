@@ -2,7 +2,6 @@
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   color: rgb(3, 97, 3);
   text-align: center;
-
 }
 
 #header{
@@ -95,10 +94,11 @@ img {
   margin-top: 15px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; 
 }
 
 .article-card:hover {
-  filter: drop-shadow(0 0 0.2rem rgb(182, 178, 178));
+  transform: translateY(-2px); 
 }
 
 @media (max-width: 600px) {
